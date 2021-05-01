@@ -13,7 +13,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="./Registro.php">Registro Empleado</a></li>
                 <li class="nav-item"><a class="nav-link" href="./Devengados.php">Devengados</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Deducciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="./Deducciones.php">Deducciones</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Liquidacion Aportes SOI</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Prestaciones Sociales</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Reportes</a></li>
@@ -65,19 +65,19 @@
                         <label class="col-12 mb-2 text-muted fw-bold" for="">El empleado tuvo horas extras? digite en horas</label>
                         <div class="col-12 input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" onclick="inputs('CmbHE','InputHE');" type="checkbox" value="" id="CmbHE" name="CmbHE">
+                                <input class="form-check-input mt-0" onclick="inputs('CmbHE','InputHE','1');" type="checkbox" value="" id="CmbHE" name="CmbHE">
                             </div>
                             <input type="number" class="form-control"  readonly="true" placeholder="Horas extra (horas)" id="InputHE" name="InputHE" >
                         </div>
                         <div class="col-12 input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" onclick="inputs('CmbRC','InputRC');" type="checkbox" value="" id="CmbRC" name="CmbRC">
+                                <input class="form-check-input mt-0" onclick="inputs('CmbRC','InputRC','1');" type="checkbox" value="" id="CmbRC" name="CmbRC">
                             </div>
                             <input type="number" class="form-control"  readonly="true" placeholder="Recargo nocturno (horas)" id="InputRC" name="InputRC" >
                         </div>
                         <div class="col-12 input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" onclick="inputs('CmbHD','InputHD');" type="checkbox" value="" id="CmbHD" name="CmbHD">
+                                <input class="form-check-input mt-0" onclick="inputs('CmbHD','InputHD','1');" type="checkbox" value="" id="CmbHD" name="CmbHD">
                             </div>
                             <input type="number" class="form-control" readonly="true" placeholder="Dominicales (horas)" id="InputHD" name="InputHD" >
                         </div>
@@ -100,7 +100,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-md-9 bg-success">
+            <div class="col-12 col-md-9">
                 <p>aqui es para poner la tabla de los devengados</p>
             </div>
         </div>

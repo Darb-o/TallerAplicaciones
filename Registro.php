@@ -13,7 +13,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="./Registro.php">Registro Empleado</a></li>
                 <li class="nav-item"><a class="nav-link" href="./Devengados.php">Devengados</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Deducciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="./Deducciones.php">Deducciones</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Liquidacion Aportes SOI</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Prestaciones Sociales</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Reportes</a></li>

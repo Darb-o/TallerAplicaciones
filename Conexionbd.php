@@ -93,5 +93,25 @@ function EditarDevengados(){
     WHERE id = $id";
     $result = mysqli_query($link,$sql) or die ("error en la consulta $sql ".mysqli_error($link));
 }
+
+function editarDeducciones(){
+    $link = conectar();
+    $id = $_REQUEST['SelEmpleado'];
+    if($_REQUEST['InputAN']!=''){
+        $an = $_REQUEST['InputAN'];
+    }else{
+        $an = 0;
+    }
+
+    if($_REQUEST['InputPR']!=''){
+        $pre = $_REQUEST['InputPR'];
+        $fecha = $_REQUEST['InputFecha'];
+        $cuota = $_REQUEST['InputCuota'];
+    }
+    $sql = "update deducciones
+    set anticipo = $an, valor_p = $pre, cuota= $cuota, fecha = '$fecha' 
+    WHERE id = $id";
+    $result = mysqli_query($link,$sql) or die ("error en la consulta $sql ".mysqli_error($link));
+}
 ?>
 

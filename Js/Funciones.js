@@ -31,14 +31,28 @@ function desactivar(op1, op2, op3) {
     }
 }
 
-function inputs(op1, op2) {
+function inputs(op1, op2, opa) {
     var cmb = document.getElementById(op1);
     var input = document.getElementById(op2);
     if (cmb.checked == true) {
         input.removeAttribute("readonly", false);
+        if (opa == '2') {
+            var fecha = document.getElementById('InputFecha');
+            var cuota = document.getElementById('InputCuota');
+            fecha.removeAttribute("readonly", false);
+            cuota.removeAttribute("readonly", false);
+        }
     } else if (cmb.checked == false) {
         input.setAttribute("readonly", true);
         input.value = "";
+        if (opa == '2') {
+            var fecha = document.getElementById('InputFecha');
+            var cuota = document.getElementById('InputCuota');
+            fecha.setAttribute("readonly", true);
+            cuota.setAttribute("readonly", true);
+            fecha.value = "";
+            cuota.value = "";
+        }
     }
 }
 

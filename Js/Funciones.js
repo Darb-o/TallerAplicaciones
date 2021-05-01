@@ -1,11 +1,44 @@
 function seleccionOtro(op1, op2) {
-    let SelCargo = document.getElementById(op1);
-    let InputCargo = document.getElementById(op2);
+    var SelCargo = document.getElementById(op1);
+    var InputCargo = document.getElementById(op2);
     if (SelCargo.value == 'Otro') {
         InputCargo.removeAttribute("readonly", false);
     } else {
         InputCargo.setAttribute("readonly", true);
         InputCargo.value = "";
+    }
+}
+
+function desactivar(op1, op2, op3) {
+    var cmbuno = document.getElementById(op1);
+    var cmbdos = document.getElementById(op2);
+    var input = document.getElementById(op3);
+    if (cmbuno.checked == true) {
+        cmbdos.setAttribute("disabled", true);
+        input.removeAttribute("readonly", false);
+    } else if (cmbuno.checked == false) {
+        cmbdos.removeAttribute("disabled", false);
+        input.setAttribute("readonly", true);
+        input.value = "";
+    }
+    if (cmbdos.checked == true) {
+        cmbuno.setAttribute("disabled", true);
+        input.removeAttribute("readonly", false);
+    } else if (cmbuno.checked == false) {
+        cmbuno.removeAttribute("disabled", false);
+        input.setAttribute("readonly", true);
+        input.value = "";
+    }
+}
+
+function inputs(op1, op2) {
+    var cmb = document.getElementById(op1);
+    var input = document.getElementById(op2);
+    if (cmb.checked == true) {
+        input.removeAttribute("readonly", false);
+    } else if (cmb.checked == false) {
+        input.setAttribute("readonly", true);
+        input.value = "";
     }
 }
 

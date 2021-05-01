@@ -41,8 +41,57 @@ function InsertarEmpleado(){
     $clase = $_REQUEST['SelClase'];
     $centro = $_REQUEST['SelCentro'];
     $sql = "insert into empleado values($id,'$nombre','$apellido',$sueldo,'$cargo','$costo',$dias,'$indicador','$clase',$centro)";
+    $sql2 = "insert into deducciones (id) values($id)";
+    $sql3 = "insert into devengados (id) values($id)";
     $result = mysqli_query($link,$sql) or die ("error en la consulta $sql ".mysqli_error($link));
+    mysqli_query($link,$sql2) or die ("error en la consulta $sql ".mysqli_error($link));
+    mysqli_query($link,$sql3) or die ("error en la consulta $sql ".mysqli_error($link));
     return $result;
+}
+
+function EditarDevengados(){
+    $link = conectar();
+    $id = $_REQUEST['SelEmp'];
+    if($_REQUEST['InputVD'] != ''){
+        $vaca = $_REQUEST['InputVD'];
+    }else if($_REQUEST['InputVC'] != ''){
+        $vaca = $_REQUEST['InputVC'];
+    }else{
+        $vaca = 0; 
+    }
+
+    if($_REQUEST['InputDE'] != ''){
+        $inc = $_REQUEST['InputDE'];
+        $tipo = 'd';
+    }else if($_REQUEST['InputEE'] != ''){
+        $inc = $_REQUEST['InputEE'];
+        $tipo = 'e';
+    }else{
+        $inc = 0;
+        $tipo = 'n'; 
+    }
+
+    if($_REQUEST['InputHE'] != ''){
+        $he = $_REQUEST['InputHE'];
+    }else{
+        $he = 0;
+    }
+
+    if($_REQUEST['InputRC'] != ''){
+        $rc = $_REQUEST['InputRC'];
+    }else{
+        $rc = 0;
+    }
+
+    if($_REQUEST['InputHD'] != ''){
+        $do = $_REQUEST['InputHD'];
+    }else{
+        $do = 0;
+    }
+    $sql = "update devengados
+    set dias_v = $vaca, dias_i = $inc, tipo_i = '$tipo', extra = $he,recargo = $rc, dominicales = $do 
+    WHERE id = $id";
+    $result = mysqli_query($link,$sql) or die ("error en la consulta $sql ".mysqli_error($link));
 }
 ?>
 
